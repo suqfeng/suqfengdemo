@@ -1,0 +1,79 @@
+/* 基础样式 */
+:root {
+    --primary: #2C3E50;
+    --secondary: #34495E;
+    --accent: #3498DB;
+    --text: #ECF0F1;
+    --light-bg: #F9F9F9;
+}
+
+body {
+    font-family: 'Montserrat', 'Noto Serif SC', sans-serif;
+    color: var(--primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* 导航栏 */
+.glass-nav {
+    position: fixed;
+    width: 100%;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+/* 英雄区域 */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--light-bg) 0%, #FFFFFF 100%);
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+/* 技能进度条 */
+.skill-progress {
+    height: 6px;
+    background: #EEE;
+    border-radius: 3px;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: var(--accent);
+    border-radius: 3px;
+    transition: width 1.5s ease-out;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
